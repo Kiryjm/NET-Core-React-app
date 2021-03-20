@@ -47,6 +47,10 @@ function App() {
     setEditMode(false);
   }
 
+  function handleDeleteActivity(id: string) {
+    setActivities([...activities.filter(x => x.id !== id)])
+  }
+
   return (
     <>
       <NavBar openForm={handleFormOpen} />
@@ -60,6 +64,7 @@ function App() {
           openForm={handleFormOpen}
           closeForm={handleFormClose}
           createOrEdit={handleCreateOfEditActivity}
+          deleteActivity = {handleDeleteActivity}
         />
       </Container>
     </>
